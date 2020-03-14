@@ -1,0 +1,59 @@
+enum Role {
+  ADMIN
+  USER
+}
+
+type User {
+  id: ID
+  name: String
+  email:String
+  profileImage:String
+  contact:String
+  username:String
+  password:String
+  role:Role
+}
+
+type Token {
+  token:String!
+}
+
+input UserCreateInput {
+  id: ID
+  name: String
+  email:String
+  profileImage:String
+  contact:String
+  username:String
+  password:String
+  role:Role
+}
+
+input LoginCreateInput {
+  id:ID
+  email:String
+  username:String
+  password:String
+}
+
+input UserCreateWhereUniqueInput {
+  id:ID
+}
+
+input UserCreateWhereInput {
+  id:ID
+  email:String
+  username:String
+}
+
+type Query {
+  getUser(where:UserCreateWhereUniqueInput): User
+  getUsers(where:UserCreateWhereUniqueInput): [User]
+}
+
+type Mutation {
+  createUser(data:UserCreateInput): User
+  login(data:LoginCreateInput): Token
+  updateUser(data:UserCreateInput,where:UserCreateWhereUniqueInput): User
+  deleteUser(where:UserCreateWhereUniqueInput): User
+}

@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": false,
+    "node": true,
+    "jquery": false
+  },
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "legacyDecorators": true,
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true,
+      "classes": true
+    }
+  },
+  "rules": {
+    "class-methods-use-this": 0,
+    "react/prop-types": 0,
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": [
+      "warn",
+      "never"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 200,
+        "ignoreUrls": true
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true
+    }
+  }
+}
